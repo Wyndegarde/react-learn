@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
@@ -11,11 +12,13 @@ const AddTask = ({ onAdd }) => {
       alert("Please Add Task");
       return;
     }
+
     onAdd({ text, day, reminder });
     setText("");
     setText("");
     setText(false);
   };
+  
   return (
     <form className="add-form" onSubmit={onSubmit}>
       <div className="form-control">
